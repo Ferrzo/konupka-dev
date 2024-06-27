@@ -1,0 +1,19 @@
+---
+    const { blogType, title } = Astro.props;
+    import Image from "astro:assets";
+
+    let imageUrl = '';
+    
+    if(blogType === 'blog') {
+        imageUrl = '/images/blog.jpg';
+    } else if(blogType === 'hike') {
+        imageUrl = '/images/other.jpg';
+    } else if(blogType === 'other') {
+        imageUrl = '/images/other.jpg';
+    }
+---
+<div>
+    <Image src={imageUrl} alt="Image of a blog post"/>
+    
+    <p>{title}</p>
+</div>

@@ -1,0 +1,43 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+import Navigation from "./Navigation.astro";
+---
+<header>
+    <h1 class="title">
+        <a href="/" class="rock-salt-regular">Konupka</a>
+    </h1>
+    <div class="navigation">
+        <Navigation />
+        <ThemeIcon />
+    </div>
+</header>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+    .title a {
+        text-decoration: none;
+        color: var(--text-color);
+    }
+    .rock-salt-regular {
+        font-family: "Rock Salt", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .navigation {
+        display: flex;
+        align-items: center;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
