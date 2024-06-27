@@ -7,20 +7,17 @@ import Footer from "../components/Footer.astro";
   <head>
     <title>Konupka.dev</title>
     <link rel="stylesheet" href="/src/styles/global.css">
+		<link rel="icon" type="image/png" href="/favicon.png" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Konupka.dev is a personal blog and portfolio site for web developer and designer, Jaromir Konupka.">
-    <meta name="keywords" content="web developer, web designer, portfolio, blog, web development, web design, front-end developer, angular developer">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> -->
+    <meta name="description" content="Konupka.dev is a personal blog and portfolio site for web developer and Angular developer, Jaromir Konupka.">
+    <meta name="keywords" content="web developer, portfolio, blog, web development, web design, front-end developer, angular developer">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
   </head>
   <body>
     <Header />
     <div class="container">
         <slot />
-
     </div>
     <Footer />
   </body>
