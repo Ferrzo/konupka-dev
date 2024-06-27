@@ -4,25 +4,24 @@ const year = '© '+ new Date().getFullYear();
 
 <footer>
     <ul>
-        <li class="link_btn"><a class="icon_button" href="https://github.com/ferrzo"><span class="github-icon">Github</span></a></li>
-        <li class="link_btn"><a class="icon_button" href="mailto: jaromir@konupka.dev"><span class="email-icon">Email</span></a></li>
-        <li class="link_btn"><a class="icon_button" href="https://www.linkedin.com/in/jaromirkonupka/"><span class="linkedin-icon">LinkedIn</span></a></li>
-        <li class="link_btn"><a class="icon_button" href="https://www.instagram.com/ferrzo/"><span class="instagram-icon">Instagram</span></a></li>
+        <li class="link_btn"><a class="icon-button" href="https://github.com/ferrzo"><span class="github-icon">Github</span></a></li>
+        <li class="link_btn"><a class="icon-button" href="mailto: jaromir@konupka.dev"><span class="email-icon">Email</span></a></li>
+        <li class="link_btn"><a class="icon-button" href="https://www.linkedin.com/in/jaromirkonupka/"><span class="linkedin-icon">LinkedIn</span></a></li>
+        <li class="link_btn"><a class="icon-button" href="https://www.instagram.com/ferrzo/"><span class="instagram-icon">Instagram</span></a></li>
     </ul>
     <small class="center">{year}</small>
 </footer>
 
 <style>
     ul {
-        display: flex;
         list-style-type: none;
+        text-align: center;
         padding: 0;
-        justify-content: center;
     }
 
     li {
         margin: 0 1rem;
-
+        display: inline-block;
     }
 
     footer {
@@ -42,7 +41,7 @@ const year = '© '+ new Date().getFullYear();
         }
 
         li {
-            margin: 0.5rem 0;
+            margin: 1rem;
         }
     }
 </style>
