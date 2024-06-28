@@ -1,6 +1,6 @@
 ---
     const { blogType, title } = Astro.props;
-    import Image from "astro:assets";
+    import { Image } from "astro:assets";
 
     let imageUrl = '';
     
@@ -13,7 +13,7 @@
     }
 ---
 <div>
-    <Image src={imageUrl} alt="Image of a blog post"/>
+    <Image width="128" height="128" src={imageUrl} alt="Image of a blog post"/>
     
     <p>{title}</p>
 </div>
