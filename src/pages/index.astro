@@ -4,39 +4,108 @@ import Article from "../components/Article.astro";
 import { Image } from "astro:assets";
 import hikeImage from "/src/assets/images/hike_image.svg";
 ---
+
 <BaseLayout>
-  
   <div class="flex">
-    <Image src={hikeImage} alt="hiking person"decoding="async"
-    loading="eager" width="256" height="256" class="image-hike" />
+    <Image
+      src={hikeImage}
+      alt="hiking person"
+      decoding="async"
+      loading="eager"
+      width="256"
+      height="256"
+      class="image-hike"
+    />
   </div>
-  
-  <Article id="about" title="About">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
+
+  <Article id="about" title="About Me">
+    <p>
+      Hello! I'm Jaromir, a frontend developer specializing in Angular. I thrive
+      on bringing innovative ideas to life on the web. Over the past few years,
+      I've honed my skills in Angular, becoming proficient in building dynamic
+      and responsive applications.
+    </p>
+
+    <p>
+      Currently, I'm on my dream hiking trip in the beautiful landscapes of
+      Sweden. This adventure is not just a break from my usual coding routine
+      but also a source of inspiration. The serene environment and the
+      challenges of hiking mirror my approach to development – always exploring,
+      learning, and pushing my limits.
+    </p>
+
+    <p>Feel free to contact me.</p>
   </Article>
   <Article id="skills" title="Skills">
     <div class="text-center">
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of angular" loading="eager" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of typescript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of css" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of html" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of ngrx" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of ionic  " src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ionic/ionic-original.svg" />
-      <Image width="60" height="60" loading="eager" class="skill-button" alt="logo of git" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of angular"
+        loading="eager"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of typescript"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of css"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of html"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of ngrx"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of ionic  "
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ionic/ionic-original.svg"
+      />
+      <Image
+        width="60"
+        height="60"
+        loading="eager"
+        class="skill-button"
+        alt="logo of git"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+      />
     </div>
   </Article>
-  <Article id="blogs" title="Blogs">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio ut, beatae culpa perferendis voluptates sit facilis, aut illum, dolorem atque voluptatibus. Explicabo quas rerum voluptates, obcaecati repudiandae temporibus facilis!</p>
-
+  <Article id="blogs" title="Interests">
+    <p>
+      When I'm not coding or hiking, you'll find me diving into new
+      technologies, playing video games, board games, or enjoying a good book.
+      My goal is to continue growing as a developer and to contribute to
+      projects that make a positive impact.
+    </p>
   </Article>
-
-
 </BaseLayout>
-
 
 <style>
   .image-hike {
