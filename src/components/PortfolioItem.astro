@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+const { textFirst, imageUrl, description } = Astro.props;
+---
+
+<section class="portfolio-item">
+  <div
+    class={textFirst
+      ? "flex-reverse portfolio-item__content"
+      : "portfolio-item__content"}
+  >
+    <p>{description}</p>
+    <Image
+    src={imageUrl}
+    alt="company logo"
+    decoding="async"
+    loading="eager"
+    width="256"
+    height="256"
+  />
+</div>
+  </div>
+</section>
+
+<style>
+    .portfolio-item {
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .portfolio-item__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .flex-reverse {
+        flex-direction: row-reverse;
+    }
+</style>
