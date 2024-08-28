@@ -1,0 +1,99 @@
+---
+import  SlideItem from "./SlideItem.astro";
+import type { ImageMetadata } from "astro";
+
+const imageSource = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/logos/*.{jpeg,jpg,png,svg}"
+);
+
+const images = Object.keys(imageSource)
+  .map((image) => image)
+  .map((imagePath) => {
+    if (!imageSource[imagePath])
+      throw new Error(
+        `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+      );
+
+    const image = imageSource[imagePath]();
+    return image;
+  });
+
+if (!images || images.length === 0)
+  throw new Error(
+    `"images does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<div class="content">
+  <div class="slider">
+    <div class="slide-track">
+     <SlideItem logoId="siko-logo.svg" url="https://www.siko.cz" altText="Siko logo"/>
+     <SlideItem logoId="nedbank-logo.svg" url="https://secured.nedbank.com.na" altText="Nedbank logo"/>
+     <SlideItem logoId="cohora-logo.svg" url="https://www.cohora.com/" altText="Cohora logo"/>
+     <SlideItem logoId="booktickets-logo.svg" url="https://www.booktickets.cz" altText="Booktickets logo"/>
+     <SlideItem logoId="atos-logo.svg" url="https://atos.net/cs/ceska-republika" altText="Atos logo"/>
+    </div>
+  </div>
+</div>
+
+<style>
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-256px * 4));
+    }
+  }
+
+  .slider {
+    /* background: white; */
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: calc(256px * 5);
+
+    &::before,
+    &::after {
+      background: linear-gradient(
+        to right,
+        /* rgba(, 1) 0%, */
+        rgba(255, 255, 255, 0) 100%
+      );
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
+    }
+
+    .slide-track {
+      animation: scroll 12s linear alternate infinite;
+      display: flex;
+      width: calc(256px * 5);
+      max-height: 150px;
+    }
+
+    .slide-track:hover {
+      animation-play-state: paused; /* Pause animation on hover */
+    }
+  }
+</style>
