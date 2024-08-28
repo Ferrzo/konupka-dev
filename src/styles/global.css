@@ -120,6 +120,10 @@ h1 {
   content: url("/li-in.png");
 }
 
+.container {
+  overflow: auto;
+}
+
 html.dark {
   background-color: var(--background-color-dark);
   color: var(--color-dark);

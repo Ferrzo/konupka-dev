@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Article from "../components/Article.astro";
 import { Image } from "astro:assets";
 import hikeImage from "/src/assets/images/hike_image.svg";
+import Slide from "../components/Slide.astro";
 ---
 
 <BaseLayout>
@@ -97,6 +98,8 @@ import hikeImage from "/src/assets/images/hike_image.svg";
       />
     </div>
   </Article>
+  <Article id="portfolio" title="Portfolio">
+    <Slide/>
   <Article id="blogs" title="Interests">
     <p>
       When I'm not coding or hiking, you'll find me diving into new

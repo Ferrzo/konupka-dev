@@ -1,7 +1,20 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
-const { textFirst, imageUrl, description } = Astro.props;
+
+
+const { textFirst, logoId, altText, description } = Astro.props;
+const imagePath = `/src/assets/images/logos/${logoId}`;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/logos/*.{jpeg,jpg,png,svg}"
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+
+  const image = images[imagePath]();
 ---
 
 <section class="portfolio-item">
@@ -11,35 +24,40 @@ const { textFirst, imageUrl, description } = Astro.props;
       : "portfolio-item__content"}
   >
     <p>{description}</p>
-    <Image
-    src={imageUrl}
-    alt="company logo"
-    decoding="async"
-    loading="eager"
-    width="256"
-    height="256"
-  />
-</div>
+    <div>
+        <Image
+        src={image}
+        alt={altText}
+        decoding="async"
+        loading="eager"
+        width="256"
+      />
+    </div>
   </div>
 </section>
 
 <style>
-    .portfolio-item {
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .portfolio-item {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .portfolio-item__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-    }
+  .portfolio-item__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
-    .flex-reverse {
-        flex-direction: row-reverse;
+    div {
+        padding: 0 2rem;
+        width: 300px;
+        max-height: 128px;
     }
+  }
+
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
 </style>
