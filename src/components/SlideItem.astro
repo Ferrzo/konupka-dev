@@ -12,21 +12,35 @@ if (!images[imagePath])
     `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
   );
 
-const image = images[imagePath]();
+const imageImport = await images[imagePath]();
+const image = imageImport.default;
+
+const imageUrl = image.src; 
+const projectName = altText.replace(/ logo/i, "");
+
+const ldjson = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": projectName,
+  "url": url,
+  "image": imageUrl
+};
 ---
 
 <div class="slide">
-    <a href={url}>
-        <Image
-        src={image}
-        alt={altText}
-        decoding="async"
-        loading="eager"
-        height="100"
-        width="256"
-      />
-    </a>
-  
+  <a href={url}>
+    <Image
+      src={image}
+      alt={altText}
+      decoding="async"
+      loading="eager"
+      height="100"
+      width="256"
+    />
+  </a>
+  <script type="application/ld+json">
+    {JSON.stringify(ldjson)}
+  </script>
 </div>
 
 <style>
