@@ -8,19 +8,57 @@ import '../styles/global.css';
 <html lang="en">
   <head>
     <title>Konupka.dev</title>
-		<link rel="icon" type="image/png" href="/favicon.png" />
-    <meta charset="utf-8">
-    <meta name="description" content="Konupka.dev is a personal blog and portfolio site for web developer and Angular developer, Jaromir Konupka.">
-    <meta name="keywords" content="web developer, portfolio, blog, web development, web design, front-end developer, angular developer">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Konupka.dev is a personal blog and portfolio site for web developer and Angular developer, Jaromir Konupka."
+    />
+    <meta
+      name="keywords"
+      content="web developer, portfolio, blog, web development, web design, front-end developer, angular developer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="{Astro.generator}" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "Jaromir Konupka",
+        "url": "https://www.konupka.dev"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jaromír Konůpka",
+        "url": "https://konupka.dev/",
+        "image": "/imageofme.jpeg",
+        "jobTitle": "Frontend Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Actum Digital",
+          "url": "https://www.actumdigital.com/"
+        },
+        "sameAs": [
+          "https://www.facebook.com/jaromirkonupka/",
+          "https://www.linkedin.com/in/jaromirkonupka/",
+          "https://www.github.com/ferrzo"
+        ],
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://konupka.dev/"
+        }
+      }
+    </script>
   </head>
   <body>
     <Header />
     <div class="container">
-        <slot />
+      <slot />
     </div>
     <Footer />
   </body>
 </html>
-
