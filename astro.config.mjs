@@ -8,5 +8,6 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   site: 'https://konupka.dev',
+  trailingSlash: 'always',
   integrations: [sitemap()]
 });
