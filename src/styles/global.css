@@ -3,6 +3,7 @@
   --background-color-dark: rgba(113, 24, 226, 1);
   --color: rgba(0, 0, 0, 1);
   --color-dark: rgba(255, 255, 255, 1);
+  --primary-color: #ff9776;
 }
 
 html {
@@ -38,14 +39,14 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: var(--primary-color);
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: var(--primary-color);;
   display: none;
   margin: 0;
 }
@@ -66,7 +67,7 @@ h1 {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: var(--primary-color);
 }
 
 .expanded {

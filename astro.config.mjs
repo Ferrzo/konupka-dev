@@ -9,5 +9,8 @@ export default defineConfig({
   adapter: netlify(),
   site: 'https://konupka.dev',
   trailingSlash: 'always',
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  image: {
+    domains: ['cdn.jsdelivr.net']
+  }
 });
