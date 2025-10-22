@@ -5,8 +5,7 @@ interface Props {
     mainTitle?: boolean;
 }
 
-const { id, title, mainTitle } = Astro.props;
-
+const { id, title, mainTitle = false } = Astro.props;
 ---
 
 <section>

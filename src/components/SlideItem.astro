@@ -15,7 +15,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 if (!images[imagePath])
   throw new Error(
-    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+    `"${imagePath}" does not exist in glob: "/src/assets/images/logos/*.{jpeg,jpg,png,svg}"`
   );
 
 const imageImport = await images[imagePath]();
@@ -34,12 +34,12 @@ const ldjson = {
 ---
 
 <div class="slide">
-  <a href={url}>
+  <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${projectName} project`}>
     <Image
       src={image}
       alt={altText}
       decoding="async"
-      loading="eager"
+      loading="lazy"
       height="100"
       width="256"
     />

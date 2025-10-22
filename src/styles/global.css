@@ -1,9 +1,14 @@
 :root {
-  --background-color: rgba(189, 195, 255, 1);
-  --background-color-dark: rgba(113, 24, 226, 1);
-  --color: rgba(0, 0, 0, 1);
-  --color-dark: rgba(255, 255, 255, 1);
+  /* Brand Colors */
   --primary-color: #ff9776;
+  
+  /* Light Theme */
+  --background-color: rgba(189, 195, 255, 1);
+  --color: rgba(0, 0, 0, 1);
+  
+  /* Dark Theme */
+  --background-color-dark: rgba(113, 24, 226, 1);
+  --color-dark: rgba(255, 255, 255, 1);
 }
 
 html {
@@ -62,7 +67,7 @@ h1.title a {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: var(--primary-color);;
+  background-color: var(--primary-color);
   display: none;
   margin: 0;
 }

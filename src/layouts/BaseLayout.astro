@@ -18,7 +18,10 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="preload" href="/src/assets/images/hike_image.svg" as="image" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    
     <meta charset="utf-8" />
     <meta
       name="description"
@@ -42,6 +45,16 @@ import "../styles/global.css";
     <meta property="og:url" content="https://konupka.dev/" />
     <meta property="og:image" content="https://konupka.dev/imageofme.jpeg" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jaromír Konůpka | Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Freelance Angular developer creating modern responsive web and mobile apps."
+    />
+    <meta name="twitter:image" content="https://konupka.dev/imageofme.jpeg" />
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",

@@ -1,23 +1,35 @@
 ---
 interface Props {
-    blogType: 'blog' | 'hike' | 'other';
-    title: string;
+  blogType: "blog" | "hike" | "other";
+  title: string;
 }
-    const { blogType, title } = Astro.props;
-    import { Image } from "astro:assets";
+const { blogType, title } = Astro.props;
+import { Image } from "astro:assets";
 
-    let imageUrl = '';
-    
-    if(blogType === 'blog') {
-        imageUrl = '/images/blog.jpg';
-    } else if(blogType === 'hike') {
-        imageUrl = '/images/other.jpg';
-    } else if(blogType === 'other') {
-        imageUrl = '/images/other.jpg';
-    }
+let imageUrl = "";
+
+enum BlogType {
+  BLOG = "blog",
+  HIKE = "hike",
+  OTHER = "other"
+};
+
+if (blogType === BlogType.BLOG) {
+  imageUrl = "/images/blog.jpg";
+} else if (blogType === BlogType.HIKE) {
+  imageUrl = "/images/other.jpg";
+} else if (blogType === BlogType.OTHER) {
+  imageUrl = "/images/other.jpg";
+}
 ---
+
 <div>
-    <Image width="128" height="128" src={imageUrl} alt="Image of a blog post"/>
-    
-    <p>{title}</p>
+  <Image
+    width="128"
+    height="128"
+    src={imageUrl}
+    alt={`${title} blog post thumbnail`}
+  />
+
+  <p>{title}</p>
 </div>
