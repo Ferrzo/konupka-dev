@@ -1,4 +1,8 @@
 ---
+interface Props {
+    blogType: 'blog' | 'hike' | 'other';
+    title: string;
+}
     const { blogType, title } = Astro.props;
     import { Image } from "astro:assets";
 

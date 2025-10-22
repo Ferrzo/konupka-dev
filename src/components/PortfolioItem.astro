@@ -2,7 +2,12 @@
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
-
+interface Props {
+  textFirst: boolean;
+  logoId: string;
+  altText: string;
+  description: string;
+}
 
 const { textFirst, logoId, altText, description } = Astro.props;
 const imagePath = `/src/assets/images/logos/${logoId}`;
