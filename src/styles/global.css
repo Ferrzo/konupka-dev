@@ -9,15 +9,15 @@
   /* Light Theme */
   --background-color: #f8fafc;
   --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --surface-color: rgba(255, 255, 255, 0.95);
-  --surface-hover: rgba(255, 255, 255, 1);
+  --surface-color: #e6e6e6;
+  --surface-hover: #ebebeb;
   --color: #1e293b;
-  --color-secondary: #64748b;
-  --border-color: rgba(148, 163, 184, 0.2);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --color-secondary: #475569;
+  --border-color: rgba(99, 102, 241, 0.2);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.15), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.18), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   
   /* Dark Theme */
   --background-color-dark: #0f172a;
@@ -91,7 +91,7 @@ section {
   padding: 2.5rem;
   margin: 2rem 0;
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(99, 102, 241, 0.18);
   backdrop-filter: blur(10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -121,11 +121,17 @@ a.header-link:hover {
 }
 
 .dark h1.title a {
-  color: var(--color-dark);
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h1.title a {
-  color: var(--color);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* nav styles */
@@ -233,10 +239,10 @@ h1.title a {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
-  border: 2px solid var(--border-color);
+  border: 2px solid rgba(99, 102, 241, 0.35);
   background: var(--surface-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .icon-button:hover {
