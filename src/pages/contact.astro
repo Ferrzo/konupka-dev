@@ -1,0 +1,317 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact | Jaromir Konupka"
+  description="Get in touch with Jaromír Konůpka — freelance Angular frontend developer."
+>
+  <div class="page-header">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+  </div>
+
+  <section class="contact-section">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form"
+      action="/contact/success/"
+    >
+      <!-- Netlify form name -->
+      <input type="hidden" name="form-name" value="contact" />
+      <!-- Honeypot anti-spam field -->
+      <p class="hidden" aria-hidden="true">
+        <label>Don't fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="What's on your mind?"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message →</button>
+    </form>
+
+    <div class="contact-aside">
+      <div class="aside-card">
+        <h2>Other ways to reach me</h2>
+        <ul class="contact-links">
+          <li>
+            <a href="mailto:jaromir@konupka.dev" class="contact-link">
+              <span class="link-icon">✉</span>
+              <span>jaromir@konupka.dev</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jaromirkonupka/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="link-icon">in</span>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ferrzo" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="link-icon">&#123;&#125;</span>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 2rem 0 1rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .page-header h1 {
+    margin: 0 0 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    align-items: start;
+    padding-bottom: 3rem;
+  }
+
+  /* override global section styles */
+  .contact-section {
+    background: none;
+    border-radius: 0;
+    padding-top: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    transform: none;
+  }
+
+  .contact-section:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .contact-form {
+    background: var(--surface-color);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    resize: vertical;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+    padding: 0.8rem 2.2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .aside-card {
+    background: var(--surface-color);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    animation: fadeIn 0.7s ease-out;
+  }
+
+  .aside-card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .aside-card h2::after {
+    width: 100%;
+  }
+
+  .contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .contact-link:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+  }
+
+  .link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      grid-template-columns: 1fr;
+    }
+
+    .submit-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  :global(.dark) .contact-form,
+  :global(.dark) .aside-card {
+    background: var(--surface-color-dark);
+    border-color: var(--border-color-dark);
+  }
+
+  :global(.dark) input[type="text"],
+  :global(.dark) input[type="email"],
+  :global(.dark) textarea {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--border-color-dark);
+    color: var(--color-dark);
+  }
+
+  :global(.dark) input::placeholder,
+  :global(.dark) textarea::placeholder {
+    color: var(--color-secondary-dark);
+  }
+
+  :global(.dark) label {
+    color: var(--color-dark);
+  }
+
+  :global(.dark) .subtitle {
+    color: var(--color-secondary-dark);
+  }
+
+  :global(.dark) .contact-link {
+    color: var(--color-dark);
+  }
+</style>

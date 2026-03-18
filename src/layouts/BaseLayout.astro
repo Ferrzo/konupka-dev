@@ -2,12 +2,22 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import globalStyles from "../styles/global.css?inline";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Jaromir Konupka | Frontend Developer",
+  description = "Jaromír Konůpka is a freelance frontend developer building responsive web and mobile apps with Angular and modern web technologies.",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Jaromir Konupka | Frontend Developer</title>
+    <title>{title}</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={Astro.url.href} />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -32,10 +42,7 @@ import globalStyles from "../styles/global.css?inline";
     <style is:inline set:html={globalStyles}></style>
 
     <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="Jaromír Konůpka is a freelance frontend developer building responsive web and mobile apps with Angular and modern web technologies."
-    />
+    <meta name="description" content={description} />
     <meta
       name="keywords"
       content="web developer, portfolio, blog, web development, web design, front-end developer, angular developer"
@@ -46,21 +53,15 @@ import globalStyles from "../styles/global.css?inline";
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Jaromír Konůpka | Frontend Developer" />
-    <meta
-      property="og:description"
-      content="Freelance Angular developer creating modern responsive web and mobile apps."
-    />
-    <meta property="og:url" content="https://konupka.dev/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url.href} />
     <meta property="og:image" content="https://konupka.dev/imageofme.jpeg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jaromír Konůpka | Frontend Developer" />
-    <meta
-      name="twitter:description"
-      content="Freelance Angular developer creating modern responsive web and mobile apps."
-    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://konupka.dev/imageofme.jpeg" />
 
     <!-- Structured Data -->

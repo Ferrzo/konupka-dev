@@ -6,7 +6,7 @@ import hikeImage from "/src/assets/images/hike_image.svg";
 import Slide from "../components/Slide.astro";
 ---
 
-<BaseLayout>
+<BaseLayout title="Jaromir Konupka | Frontend Developer">
   <div class="hero-section">
     <div class="profile-container">
       <Image
@@ -121,6 +121,9 @@ import Slide from "../components/Slide.astro";
   </Article>
   <Article id="portfolio" title="Portfolio">
     <Slide />
+    <div class="portfolio-cta">
+      <a href="/portfolio/" class="btn-primary">View all projects →</a>
+    </div>
     <Article id="blogs" title="Interests">
       <p>
         When I’m not coding or hiking, you’ll find me diving into new
@@ -240,6 +243,31 @@ import Slide from "../components/Slide.astro";
 
     :global(.dark) .profile-image {
       border-color: rgba(30, 41, 59, 0.8);
+    }
+
+    .portfolio-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     }
   </style>
 </BaseLayout>
