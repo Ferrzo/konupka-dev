@@ -1,0 +1,215 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy (GDPR) | Jaromir Konupka"
+  description="Privacy policy and GDPR information for the contact form on konupka.dev."
+>
+  <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">How your personal data is handled when you use the contact form.</p>
+  </div>
+
+  <section class="gdpr-section">
+    <div class="gdpr-card">
+
+      <div class="gdpr-block">
+        <h2>1. Data Controller</h2>
+        <p>
+          The controller of your personal data is:<br />
+          <strong>Jaromír Konůpka</strong><br />
+          Email: <a href="mailto:jaromir@konupka.dev">jaromir@konupka.dev</a>
+        </p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>2. What Data Is Collected</h2>
+        <p>When you submit the contact form on this website, the following personal data is collected:</p>
+        <ul>
+          <li><strong>Name</strong> — to address you personally in my reply.</li>
+          <li><strong>Email address</strong> — to respond to your enquiry.</li>
+          <li><strong>Message content</strong> — the text of your enquiry.</li>
+        </ul>
+        <p>No additional data (e.g. IP address, cookies) is collected through the contact form itself.</p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>3. Purpose and Legal Basis</h2>
+        <p>
+          Your data is processed solely to respond to your enquiry. The legal basis for this processing
+          is your <strong>consent</strong> (Article 6(1)(a) GDPR), which you give by ticking the consent
+          checkbox before submitting the form.
+        </p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>4. Data Retention</h2>
+        <p>
+          Your data is retained only as long as necessary to handle your enquiry and any follow-up
+          communication. Once the matter is resolved, your data will be deleted within
+          <strong>90 days</strong>, unless a longer retention period is required by law.
+        </p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>5. Third-Party Processors</h2>
+        <p>
+          Form submissions are processed by <strong>Netlify, Inc.</strong> (form hosting provider).
+          Netlify may temporarily store submitted data on its servers. Netlify is GDPR-compliant and
+          processes data under a Data Processing Agreement. For more information, see the
+          <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify Privacy Policy</a>.
+        </p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>6. Your Rights</h2>
+        <p>Under the GDPR you have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right of access</strong> — request a copy of the data held about you.</li>
+          <li><strong>Right to rectification</strong> — request correction of inaccurate data.</li>
+          <li><strong>Right to erasure</strong> — request deletion of your data ("right to be forgotten").</li>
+          <li><strong>Right to restriction</strong> — request that processing of your data be limited.</li>
+          <li><strong>Right to object</strong> — object to processing based on legitimate interests.</li>
+          <li><strong>Right to withdraw consent</strong> — withdraw your consent at any time without affecting the lawfulness of prior processing.</li>
+          <li><strong>Right to lodge a complaint</strong> — file a complaint with the supervisory authority in your country of residence.</li>
+        </ul>
+        <p>
+          To exercise any of these rights, contact me at
+          <a href="mailto:jaromir@konupka.dev">jaromir@konupka.dev</a>.
+        </p>
+      </div>
+
+      <div class="gdpr-block">
+        <h2>7. Changes to This Policy</h2>
+        <p>
+          This policy may be updated from time to time. The date of the last revision is shown below.
+          Continued use of the contact form after any changes constitutes acceptance of the updated policy.
+        </p>
+        <p class="last-updated">Last updated: <time datetime="2026-03-18">18 March 2026</time></p>
+      </div>
+
+      <div class="back-link-wrap">
+        <a href="/contact/" class="back-link">← Back to Contact</a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 2rem 0 1rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .page-header h1 {
+    margin: 0 0 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .gdpr-section {
+    padding-bottom: 3rem;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  /* override global section styles */
+  .gdpr-section {
+    background: none;
+    border-radius: 0;
+    padding-top: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    transform: none;
+  }
+
+  .gdpr-section:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .gdpr-card {
+    background: var(--surface-color);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gdpr-block h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    color: var(--color);
+  }
+
+  .gdpr-block p,
+  .gdpr-block ul {
+    font-size: 0.975rem;
+    line-height: 1.75;
+    color: var(--color-secondary);
+    margin: 0 0 0.5rem;
+  }
+
+  .gdpr-block ul {
+    padding-left: 1.4rem;
+  }
+
+  .gdpr-block li {
+    margin-bottom: 0.35rem;
+  }
+
+  .gdpr-block a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .gdpr-block a:hover {
+    color: var(--primary-dark);
+  }
+
+  .last-updated {
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+    opacity: 0.7;
+  }
+
+  .back-link-wrap {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--primary-dark);
+  }
+
+  @media (max-width: 640px) {
+    .gdpr-card {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>

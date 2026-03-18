@@ -63,6 +63,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ></textarea>
       </div>
 
+      <div class="form-group gdpr-consent">
+        <label class="checkbox-label">
+          <input type="checkbox" name="gdpr" required />
+          <span>
+            I have read and agree to the
+            <a href="/gdpr/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+            I consent to my submitted data being processed to handle my enquiry.
+          </span>
+        </label>
+      </div>
+
       <button type="submit" class="submit-btn">Send Message →</button>
     </form>
 
@@ -184,6 +195,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   textarea:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  }
+
+  .gdpr-consent .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+  }
+
+  .gdpr-consent input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  .gdpr-consent a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .gdpr-consent a:hover {
+    color: var(--primary-dark);
   }
 
   .submit-btn {
