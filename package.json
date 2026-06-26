@@ -2,6 +2,9 @@
   "name": "konupka-dev",
   "type": "module",
   "version": "1.0.1",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
