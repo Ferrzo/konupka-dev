@@ -3,31 +3,37 @@ title: E-commerce Platform
 company: Siko
 logoId: siko-logo.svg
 role: Frontend Developer
-year: "2022 – 2023"
-technologies: ["Angular", "TypeScript", "NgRx", "SCSS", "RxJS"]
+year: "2022 – 2024"
+technologies: ["Angular", "TypeScript", "NgRx", "SCSS", "RxJS", "SAP Commerce Cloud"]
 url: https://www.siko.cz
-excerpt: Developed and maintained a large-scale e-commerce platform for one of the leading bathroom and kitchen retailers in Central Europe.
-order: 1
+excerpt: Developed and maintained a large-scale B2C e-commerce portal built on SAP Commerce Cloud for one of the leading bathroom and kitchen retailers in Central Europe.
+order: 3
+logoNeedsBackground: true
+
 ---
 
 ## Overview
 
-Add your project overview here — what the company does, what the product is, and why you were brought in.
+Siko is one of the largest bathroom and kitchen retailers in Central Europe, operating both physical stores and a large-scale online shop. I joined the team to help develop and extend their newest B2C portal, built on the SAP Commerce Cloud (Hybris) platform. The platform required heavy customisation to match Siko's specific design and business requirements.
 
 ## My Role
 
-Describe your specific responsibilities on the project.
+I worked as a frontend developer responsible for implementing new features, overriding and customising existing SAP Commerce Cloud components, and integrating third-party payment and logistics services into the storefront.
 
 ## What I Built
 
-- Add key feature/contribution here
-- Add key feature/contribution here
-- Add key feature/contribution here
+- Overridden and customised a significant number of native SAP Commerce Cloud UI components to align with Siko's brand and UX requirements.
+- Integrated PayPal as a payment option within the checkout flow.
+- Integrated the Packeta (Zásilkovna) parcel pickup widget, allowing customers to select a pickup point during checkout.
+- Connected and configured additional third-party widgets to extend the platform's functionality.
+- Maintained code quality and consistency across the Angular-based storefront codebase.
 
 ## Challenges & Solutions
 
-Describe a technical challenge you faced on this project and how you solved it.
+Working within SAP Commerce Cloud meant navigating a highly opinionated and complex platform where overriding default components required careful understanding of the existing module structure. The challenge was making deep customisations without breaking the underlying platform behaviour or upgrade path.
+
+I approached this by studying the platform's component architecture thoroughly, isolating overrides at the right level, and keeping custom code cleanly separated from the original platform code.
 
 ## Results
 
-What impact did your work have? Performance gains, business metrics, user feedback, etc.
+The customised storefront successfully delivered the intended Siko shopping experience, with working third-party integrations for payments and logistics. The PayPal and Packeta integrations expanded the checkout options available to customers, directly supporting conversion at the most critical point in the funnel.
