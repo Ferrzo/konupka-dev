@@ -4,7 +4,7 @@ const currentPath = Astro.url.pathname;
 
 <nav aria-label="Main navigation">
   <a class="header-link" href="/" class:list={[{ active: currentPath === '/' }]}>About</a>
-  <!-- <a class="header-link" href="/portfolio/" class:list={[{ active: currentPath.startsWith('/portfolio') }]}>Portfolio</a> -->
+  <a class="header-link" href="/portfolio/" class:list={[{ active: currentPath.startsWith('/portfolio') }]}>Portfolio</a>
   <a class="header-link" href="/contact/" class:list={[{ active: currentPath.startsWith('/contact') }]}>Contact</a>
 </nav>
 
@@ -33,7 +33,12 @@ const currentPath = Astro.url.pathname;
   }
 
   .header-link.active {
-    color: var(--primary-color);
-    background: rgba(99, 102, 241, 0.12);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  :global(.dark) .header-link.active {
+    color: var(--primary-light);
+    background: rgba(99, 102, 241, 0.2);
   }
 </style>

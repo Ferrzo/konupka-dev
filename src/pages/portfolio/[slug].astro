@@ -17,7 +17,7 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 
 const logos = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/images/logos/*.{jpeg,jpg,png,svg}'
+  '/src/assets/images/logos/*.{jpeg,jpg,png,svg,webp}'
 );
 const imagePath = `/src/assets/images/logos/${project.data.logoId}`;
 const logoModule = await logos[imagePath]();
@@ -33,11 +33,11 @@ const logo = logoModule.default;
   </div>
 
   <div class="project-header">
-    <div class="project-logo">
+    <div class={`project-logo${project.data.logoNeedsBackground ? ' logo-contrast-bg' : ''}`}>
       <Image
         src={logo}
         alt={`${project.data.company} logo`}
-        width={220}
+        width={1024}
         height={90}
         decoding="async"
         loading="eager"
@@ -125,6 +125,16 @@ const logo = logoModule.default;
     border-radius: 16px;
     border: 1px solid var(--border-color);
     align-self: center;
+  }
+
+  .logo-contrast-bg {
+    background: #1e293b;
+    border-color: transparent;
+  }
+
+  :global(.dark) .logo-contrast-bg {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: transparent;
   }
 
   .project-logo img {
